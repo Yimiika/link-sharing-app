@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Form from "./components/form";
 import { useState } from "react";
-import Phone from "./components/phone";
+import MyForm from "./form";
+import Phone from "./phone";
 
 const HomePage = () => {
   const [data, setData] = useState<{ label: string; link: string }[]>([]);
@@ -25,7 +25,7 @@ const HomePage = () => {
             the world!
           </p>
         </div>
-        <Form getData={handleSetData} />
+        <MyForm getData={handleSetData} />
         {data.length < 1 && (
           <div className="flex flex-col p-5 justify-center items-center gap-10 flex-1 self-stretch rounded-[12px] bg-[#FAFAFA] ">
             <Image

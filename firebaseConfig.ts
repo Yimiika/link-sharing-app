@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  apiKey: "AIzaSyB1-sbtTzVVyQecgnvsxz1o_Jjsq1pXpFI",
   authDomain: "link-sharing-application-e3722.firebaseapp.com",
   projectId: "link-sharing-application-e3722",
   storageBucket: "link-sharing-application-e3722.appspot.com",

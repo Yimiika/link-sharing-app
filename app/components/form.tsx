@@ -57,7 +57,7 @@ const MyForm = ({ getData }: MyFormProps) => {
     setData(formData.platform);
   };
 
-  let placeholderLabel;
+  let placeholderLabel:string;
 
   if (selectedPlaform === "github") {
     placeholderLabel = "https://github.com/femi";

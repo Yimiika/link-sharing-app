@@ -8,9 +8,13 @@ import MyForm from "./form";
 
 const HomePage = () => {
   const [data, setData] = useState<{ label: string; link: string }[]>([]);
+  const [addNewLinkClicked, setAddNewLinkClicked] = useState<boolean>(false);
 
   const handleSetData = (data: { label: string; link: string }[]) => {
     setData(data);
+    if (data.length > 0) {
+      setAddNewLinkClicked(true);
+    }
   };
 
   return (
@@ -29,7 +33,7 @@ const HomePage = () => {
 
         <MyForm getData={handleSetData} />
         {data.length < 1 && (
-          <div className="flex flex-col p-5 justify-center items-center gap-10 flex-1 self-stretch rounded-[12px] bg-[#FAFAFA] ">
+          <div className="flex flex-col p-5 justify-center items-center gap-10 flex-1 self-stretch rounded-[12px] bg-[#FAFAFA]">
             <Image
               src="/phoneimage.svg"
               alt="Logo"
@@ -48,6 +52,18 @@ const HomePage = () => {
             </div>
           </div>
         )}
+        <div className="flex p-[24px_0] flex-col items-end gap-2 self-stretch">
+          <button
+            type="submit"
+            className={`flex p-[11px_27px] flex-col items-end gap-2 rounded-lg ${
+              addNewLinkClicked
+                ? "bg-[#633CFF] text-white"
+                : "bg-[#633CFF] opacity-25 text-white"
+            }`}
+          >
+            <p className="text-[16px] font-semibold leading-[150%]">Save</p>
+          </button>
+        </div>
       </div>
     </div>
   );

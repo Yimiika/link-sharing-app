@@ -66,6 +66,16 @@ const ProfileDetails = () => {
             />
           </div>
         </div>
+        <div className="flex p-[24px_0]  flex-col items-end gap-2 self-stretch">
+        <button
+          type="submit"
+          className="flex p-[11px_27px] flex-col items-start gap-2 rounded-lg bg-[#633CFF]"
+        >
+          <p className="text-white text-[16px] font-semibold leading-[150%]">
+            Save
+          </p>
+        </button>
+      </div>
       </div>
     </div>
   );

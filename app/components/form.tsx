@@ -6,7 +6,6 @@ import {
   useFieldArray,
   Controller,
   SubmitHandler,
-  useWatch,
 } from "react-hook-form";
 import { FaGripLines } from "react-icons/fa";
 import CustomSelect from "./select-platform"; // Adjust the import path as needed
@@ -26,13 +25,13 @@ interface MyFormProps {
 
 const MyForm = ({ getData }: MyFormProps) => {
   const [data, setData] = useState<PlatformProps[]>([]);
-  const [selectedPlaform, setSelectedPlatform] = useState("");
+  const [selectedPlatform, setSelectedPlatform] = useState("");
 
   const handleSelectPlatform = (value: string) => {
     setSelectedPlatform(value);
   };
 
-  const { control, handleSubmit, setValue } = useForm<FormValues>({
+  const { control, handleSubmit, setValue, watch } = useForm<FormValues>({
     defaultValues: {
       platform: [],
     },
@@ -43,6 +42,8 @@ const MyForm = ({ getData }: MyFormProps) => {
     name: "platform",
   });
 
+  const watchedFields = watch("platform");
+
   useEffect(() => {
     // Update form data when state data changes
     if (data.length > 0) {
@@ -50,22 +51,26 @@ const MyForm = ({ getData }: MyFormProps) => {
     }
   }, [data, setValue]);
 
-  getData(fields);
+  useEffect(() => {
+    // Call getData in useEffect to ensure it's not called during render
+    getData(watchedFields);
+  }, [watchedFields, getData]);
 
   const onSubmit: SubmitHandler<FormValues> = (formData) => {
     console.log(formData.platform);
     setData(formData.platform);
   };
 
-  let placeholderLabel:string;
+  let placeholderLabel: string;
 
-  if (selectedPlaform === "github") {
+  if (selectedPlatform === "github") {
     placeholderLabel = "https://github.com/femi";
-  } else if (selectedPlaform === "youtube") {
+  } else if (selectedPlatform === "youtube") {
     placeholderLabel = "https://youtube.com/femi";
   } else {
     placeholderLabel = "https://linkedin.com/femi";
   }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full">
       <button

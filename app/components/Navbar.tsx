@@ -17,14 +17,14 @@ const Nav: React.FC = () => {
         </a>
         <div className="flex flex-row">
           <Link
-            href=""
+            href="/home"
             className="flex flex-row items-center gap-2 rounded-lg bg-[#EFEBFF] p-[11px] px-[27px] text-[#633CFF] font-[Instrument Sans] text-base font-semibold leading-[150%] "
           >
             <Image src="/linkicon.svg" alt="Linkicon" width={21} height={20} />
             Links
           </Link>
           <Link
-            href=""
+            href="/profile"
             className="flex flex-row items-center gap-2 rounded-lg p-[11px] px-[27px] text-[#737373] font-[Instrument Sans] text-base font-semibold leading-[150%]"
           >
             <Image

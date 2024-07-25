@@ -1,4 +1,4 @@
-import HomePage from "../components/HomePage";
+import ProfileDetails from "../components/ProfileDetails";
 import Nav from "../components/Navbar";
 
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="">
       <Nav/>
-      <HomePage />
+      <ProfileDetails />
     </main>
   );
 }

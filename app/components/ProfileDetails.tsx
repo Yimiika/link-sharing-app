@@ -1,50 +1,70 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Phone from "./phone";
 
 const ProfileDetails = () => {
   return (
-    <div>
-      {" "}
+    <div className="flex p-10 flex- items-start gap-10 flex-[1_0_0] self-stretch">
+      <Phone isLinkBtn={false} />
       <div className="flex flex-col p-10 items-start gap-10 flex-1 self-stretch">
         <div>
           <h3 className="text-[#333] text-2xl font-bold leading-[48px]">
-            Customize your links
+            Profile Details
           </h3>
           <p className="text-[#737373] text-base font-normal leading-6">
-            Add/edit/remove links below and then share all your profiles with
-            the world!
+            Add your details to create a personal touch to your profile.
           </p>
         </div>
-        <button className="flex flex-col justify-center items-center p-[11px] px-[27px] gap-2 self-stretch rounded-lg border border-[#633CFF]">
-          <p className="text-[#633CFF] text-base font-semibold leading-6">
-            + Add new link
-          </p>
-        </button>
-        <div className="flex flex-col p-5 justify-center items-center gap-10 flex-1 self-stretch rounded-[12px] bg-[#FAFAFA] ">
-          <Image
-            src="/phoneimage.svg"
-            alt="Logo"
-            width={249.533}
-            height={160}
-          />
-          <div className="flex flex-col items-center gap-6">
-            <h3 className="text-[#333] text-center text-4xl font-bold leading-[48px]">
-              Let’s get you started
-            </h3>
-            <p className="text-[#737373] text-center text-base font-normal leading-6 w-[488px]">
-              Use the “Add new link” button to get started. Once you have more
-              than one link, you can reorder and edit them. We’re here to help
-              you share your profiles with everyone!
-            </p>
+        <div className="flex p-5 flex-col justify-center items-center gap-3 rounded-xl bg-[#FAFAFA] self-stretch">
+          <div className="flex flex-row items-center gap-6 flex-[1_0_0] self-stretch">
+            <div className="text-[#737373] text-[16px] font-normal leading-[150%]">
+              <p>Profile picture</p>
+            </div>
+            <div className="flex p-[61px_38px_60px_39px] justify-center items-center rounded-xl bg-[#EFEBFF]">
+              <div className="flex flex-col items-center gap-2">
+                <Image src="/picture.svg" alt="Logo" width={40} height={40} />
+                <p>+ Upload Image</p>
+              </div>
+            </div>
+            <div className="flex flex-col text-[#737373] text-[12px] font-normal leading-[150%]">
+              <p>Image must be below 1024x1024px.</p>
+              <p>Use PNG or JPG format.</p>
+            </div>
           </div>
         </div>
-        <div className="flex p-[24px_40px] flex-col items-end gap-2 self-stretch">
-          <button className="flex p-[11px_27px] flex-col items-start gap-2 rounded-lg opacity-25 bg-[#633CFF]">
-            <p className="text-white text-[16px] font-semibold leading-[150%]">
-              Save
+        <div className="flex p-5 flex-col justify-center items-center gap-3 self-stretch rounded-xl bg-[#FAFAFA]">
+          <div className="flex flex-row items-center gap-4 self-stretch">
+            <p className="w-[240px] text-[#737373] text-[16px] font-normal leading-[150%]">
+              First name*
             </p>
-          </button>
+            <input
+              type="name"
+              placeholder="e.g. John"
+              className="flex p-[12px_16px] items-center gap-3 flex-[1_0_0] rounded-lg border border-[#D9D9D9] bg-[#FFF] text-[#333] text-[16px] font-normal leading-[150%] opacity-50"
+            />
+          </div>
+          <div className="flex flex-row items-center gap-4 self-stretch">
+            <p className="w-[240px] text-[#737373] text-[16px] font-normal leading-[150%]">
+              Last name*
+            </p>
+            <input
+              type="name"
+              placeholder="e.g. Appleseed"
+              className="flex p-[12px_16px] items-center gap-3 flex-[1_0_0] rounded-lg border border-[#D9D9D9] bg-[#FFF] text-[#333] text-[16px] font-normal leading-[150%] opacity-50"
+            />
+          </div>
+          <div className="flex flex-row items-center gap-4 self-stretch">
+            <p className="w-[240px] text-[#737373] text-[16px] font-normal leading-[150%]">
+              Email
+            </p>
+            <input
+              type="name"
+              placeholder="e.g. email@example.com"
+              className="flex p-[12px_16px] items-center gap-3 flex-[1_0_0] rounded-lg border border-[#D9D9D9] bg-[#FFF] text-[#333] text-[16px] font-normal leading-[150%] opacity-50"
+            />
+          </div>
         </div>
       </div>
     </div>
